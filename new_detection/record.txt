@@ -1,0 +1,12 @@
+视频：test1 总帧数：1953 预处理权重：difficult.pt 检测权重：yollov8s.pt 时间：Tatal Cost Time: 252.86480927467346s （已加速）
+视频：test1 总帧数：1953 预处理权重：difficult.pt 检测权重：yollov8s.pt 时间：Tatal Cost Time: 471.27171301841736s （未加速）
+
+
+视频：test2 总帧数：1590 预处理权重：difficult.pt 检测权重：yollov8s.pt 时间：Tatal Cost Time: 152.06 minutes     （enhance已加速）
+视频：test2 总帧数：1590 预处理权重：difficult.pt 检测权重：yollov8s.pt 时间：Tatal Cost Time: 2129.3752751350403s（enhance yolo加速）
+视频：test2 总帧数：1590 预处理权重：difficult.pt 检测权重：yollov8s.pt 时间：Tatal Cost Time: 2186.6059696674347s（enhance yolo未加速）
+视频：test2 总帧数：1590 预处理权重：easy.pt      检测权重：yollov8n.pt 时间：Tatal Cost Time: 23.09 minutes       (enhance yolo已加速）
+                                                                              Cost Time: 2205.6376605033875s
+
+
+
