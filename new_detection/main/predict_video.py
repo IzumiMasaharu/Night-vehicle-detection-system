@@ -10,9 +10,9 @@ import torch.multiprocessing as mp
 from video_utils import *
 
 parser = argparse.ArgumentParser("detection")
-parser.add_argument('--video_path', type=str, default="video/input/test2.mp4", help='location of the input data')
-parser.add_argument('--load_path', type=str, default='video/output/enhance_test2_2.mp4', help='location of the merge data ')
-parser.add_argument('--e_model', type=str, default='./weights/enhance_weights/medium.pt', help='enhacne_model')
+parser.add_argument('--video_path', type=str, default="/Users/mayohoshi/Library/CloudStorage/OneDrive-个人/论文、报告、项目、大作业/Night-vehicle-detection-system/new_detection/video/input/test2.mp4", help='location of the input data')
+parser.add_argument('--load_path', type=str, default='/Users/mayohoshi/Library/CloudStorage/OneDrive-个人/论文、报告、项目、大作业/Night-vehicle-detection-system/new_detection/video/output/enhance_test2_2.mp4', help='location of the merge data ')
+parser.add_argument('--e_model', type=str, default="/Users/mayohoshi/Library/CloudStorage/OneDrive-个人/论文、报告、项目、大作业/Night-vehicle-detection-system/new_detection/weights/enhance_weights/medium.pt", help='enhacne_model')
 parser.add_argument('--d_model', type=str, default="weights/detect_weights/yolov8s.pt", help='detect_model')
 parser.add_argument('--gpu', type=int, default=0, help='gpu device id')
 parser.add_argument('--seed', type=int, default=2, help='random seed')
