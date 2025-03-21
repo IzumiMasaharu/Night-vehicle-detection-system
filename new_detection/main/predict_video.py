@@ -12,9 +12,9 @@ import os
 import cv2
 
 parser = argparse.ArgumentParser("detection")
-parser.add_argument('--video_path', type=str, default="D:/OneDrive/论文、报告、项目、大作业/Night-vehicle-detection-system/new_detection/video/input/test2.mp4", help='location of the input data')
-parser.add_argument('--load_path', type=str, default='D:/OneDrive/论文、报告、项目、大作业/Night-vehicle-detection-system/new_detection/video/output/enhance_test2_2.mp4', help='location of the merge data ')
-parser.add_argument('--e_model', type=str, default="D:/OneDrive/论文、报告、项目、大作业/Night-vehicle-detection-system/new_detection/weights/enhance_weights/medium.pt", help='enhacne_model')
+parser.add_argument('--video_path', type=str, default="/Users/mayohoshi/Library/CloudStorage/OneDrive-个人/论文、报告、项目、大作业/Night-vehicle-detection-system/new_detection/video/input/test2.mp4", help='location of the input data')
+parser.add_argument('--load_path', type=str, default='/Users/mayohoshi/Library/CloudStorage/OneDrive-个人/论文、报告、项目、大作业/Night-vehicle-detection-system/new_detection/video/output/enhance_test2_2.mp4', help='location of the merge data ')
+parser.add_argument('--e_model', type=str, default="/Users/mayohoshi/Library/CloudStorage/OneDrive-个人/论文、报告、项目、大作业/Night-vehicle-detection-system/new_detection/weights/enhance_weights/medium.pt", help='enhacne_model')
 parser.add_argument('--d_model', type=str, default="weights/detect_weights/yolov8s.pt", help='detect_model')
 parser.add_argument('--gpu', type=int, default=0, help='gpu device id')
 parser.add_argument('--seed', type=int, default=2, help='random seed')
@@ -66,10 +66,17 @@ def frame2video(frame_folders, width, height, fps, output_path):
                 out.write(img)
 
     out.release()
+    print(f"Video successfully saved to {output_path}")
 
 def main():
     mp.set_start_method('spawn')  # 设置进程启动方式
     s_t = time.time()
+
+    # 检查文件是否存在
+    if not os.path.exists(args.e_model):
+        print(f"Error: {args.e_model} does not exist")
+    else:
+        print(f"File {args.e_model} exists")
 
     # 强制使用 CPU
     device = torch.device('cpu')
